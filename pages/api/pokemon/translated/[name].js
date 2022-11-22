@@ -4,7 +4,7 @@ const {
 } = require("http-status-codes");
 
 const _ = require("lodash");
-const poke = require("../../../utils/pokeapi");
+const poke = require("../../../../utils/pokeapi");
 
 module.exports = async function handler(req, res) {
   const path = `/pokemon-species/${req.query.name}`;
