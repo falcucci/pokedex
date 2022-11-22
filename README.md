@@ -1,34 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Pokedex Service</h1>
 
-## Getting Started
+<p align="center">A project to consume pokemon info.</p> 
 
-First, run the development server:
+
+___
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://api.postman.com/collections/3410852-47bdc30e-6c81-4084-ab8b-cb3ae29e8c82?access_key=PMAT-01GJG5GYFA5NGWGVAFKCW1GN53)
+
+
+Running the service requires some dependencies.
+
+1. Docker or Docker Compose installed. [Install instructions.](https://docs.docker.com/get-docker/)
+
+## Running the service
 
 ```bash
-npm run dev
-# or
-yarn dev
+docker-compose up -d --build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| name | description |
+| ---- | ----------- |
+| `POKE_API_URL`  | poke api endpoint |
+| `FUNTRANSLATIONS_API_URL`   | fun translations endpoint |
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Or, run the development server by yourself to check better logs:
+```bash
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Go to http://localhost:3000 to access the serveless functions
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Serveless functions are running at https://pokedex-falcucci.vercel.app/api/health
 
-## Learn More
+check it out the functions.
+```bash
+curl --location --request GET 'https://pokedex-falcucci.vercel.app/api/health'
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy It Yourself 🎉
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/falcucci/pokedex)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+#### The Node Way&trade;
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+> "When applications are done well, they are just the really application-specific, brackish residue that can't be so easily abstracted away. All the nice, reusable components sublimate away onto github and npm where everybody can collaborate to advance the commons."
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![node.js is shiny](https://feross.net/x/node2.gif)
