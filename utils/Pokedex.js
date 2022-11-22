@@ -91,7 +91,9 @@ class Pokedex {
     let url = this.funtranslations.root.url;
     url += `/${type}.json`;
     const response = await this.api({ url });
-    const description = _.get(response, "contents.translated");
+    const description =
+      _.get(response, "contents.translated") ||
+      pokemon.description;
     return description;
   }
 }
