@@ -36,6 +36,22 @@ check it out the functions.
 curl --location --request GET 'https://pokedex-falcucci.vercel.app/api/health'
 ```
 
+GET pokemon by name
+```bash
+curl --location --request GET 'https://pokedex-falcucci.vercel.app/api/pokemon/ditto'
+```
+
+GET legendary pokemon by name
+
+```bash
+curl --location --request GET 'https://pokedex-falcucci.vercel.app/api/pokemon/mewtwo'
+```
+
+GET pokemon by name legendary translated
+```bash
+curl --location --request GET 'https://pokedex-falcucci.vercel.app/api/pokemon/translated/mewtwo'
+```
+
 ## Deploy It Yourself 🎉
 
 [![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/falcucci/pokedex)
