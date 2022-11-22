@@ -17,7 +17,7 @@ chai.should();
 
 describe("route api/pokemon", () => {
   describe("GET pokemon details /<name>", () => {
-    it.only("should respond with OK", async function () {
+    it("should respond with OK", async function () {
       pokeInterceptor.HQ4IAPYPY();
       const url = "/api/pokemon/ditto";
       const headers = { Accept: "application/json" };
@@ -27,7 +27,7 @@ describe("route api/pokemon", () => {
       expect(res.body, "to satisfy", bodyAssert);
     }).timeout(5000);
 
-    it.only("should fail to retrieve a pokemon", async function () {
+    it("should fail to retrieve a pokemon", async function () {
       pokeInterceptor.VDOW3VGDYBYM();
       const url = "/api/pokemon/ditto";
       const headers = { Accept: "application/json" };
@@ -37,11 +37,25 @@ describe("route api/pokemon", () => {
   });
 
   describe("GET pokemon details translated /<name>", () => {
-    it("should respond with OK", async function () {
+    it("should translate in shakespeare mode", async function () {
+      pokeInterceptor.MQRCD01BBZ3();
       const url = "/api/pokemon/translated/ditto";
       const headers = { Accept: "application/json" };
       const res = await chai.request(server).get(url).set(headers);
+      const bodyAssert = mock.pokemon.translate.shakespeare;
       res.should.have.status(HttpStatus.OK);
+      expect(res.body, "to satisfy", bodyAssert);
     }).timeout(5000);
+
+    it.only("should translate in yoga mode", async function () {
+      pokeInterceptor.M1ZXQBAKHDUO();
+      const url = "/api/pokemon/translated/mewtwo";
+      const headers = { Accept: "application/json" };
+      const res = await chai.request(server).get(url).set(headers);
+      const bodyAssert = mock.pokemon.translate.yoda;
+      res.should.have.status(HttpStatus.OK);
+      expect(res.body, "to satisfy", bodyAssert);
+    }).timeout(5000);
+
   });
 });
