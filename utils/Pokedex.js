@@ -16,7 +16,7 @@ class Pokedex {
    * @param {Object} body - The request body for POST or PUT
    */
   async api({
-    url = API_ROOT,
+    url,
     method = "GET",
     body = undefined,
     headers = {},
