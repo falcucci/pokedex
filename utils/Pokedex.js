@@ -1,5 +1,5 @@
 const _ = require("lodash");
-const enums = require("./enums")
+const enums = require("./enums");
 
 class Pokedex {
   constructor() {
@@ -15,12 +15,7 @@ class Pokedex {
    * @param {String} method - The HTTP method to use (i.e. GET)
    * @param {Object} body - The request body for POST or PUT
    */
-  async api({
-    url,
-    method = "GET",
-    body = undefined,
-    headers = {},
-  }) {
+  async api({ url, method = "GET", body, headers = {} }) {
     if (typeof body === "object") {
       body = JSON.stringify(body);
     }
@@ -76,7 +71,8 @@ class Pokedex {
         : "shakespeare";
     let url = this.funtranslations.root.url;
     url += `/${type}.json`;
-    const response = await this.api({ url });
+    const body = { text: pokemon.description };
+    const response = await this.api({ url, method: "POST", body });
     const description =
       _.get(response, "contents.translated") ||
       pokemon.description;
