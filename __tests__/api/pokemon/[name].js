@@ -16,7 +16,7 @@ chai.use(chaiHttp);
 chai.should();
 
 describe("route api/pokemon", () => {
-  describe("GET pokemon details /<name>", () => {
+  describe("GET /pokemon/<name>", () => {
     it("should respond with OK", async function () {
       pokeInterceptor.HQ4IAPYPY();
       const url = "/api/pokemon/ditto";
@@ -36,7 +36,7 @@ describe("route api/pokemon", () => {
     }).timeout(5000);
   });
 
-  describe("GET pokemon details translated /<name>", () => {
+  describe("GET /pokemon/translated/<name>", () => {
     it("should translate in shakespeare mode", async function () {
       pokeInterceptor.MQRCD01BBZ3();
       const url = "/api/pokemon/translated/ditto";
