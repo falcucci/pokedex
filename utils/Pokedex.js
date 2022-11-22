@@ -1,25 +1,11 @@
 const _ = require("lodash");
-
-const poke = {
-  root: {
-    url: process.env.POKE_API_URL || "https://pokeapi.co/api/v2",
-  },
-};
-
-const funtranslations = {
-  root: {
-    url: process.env.FUNTRANSLATIONS_API_URL || "https://api.funtranslations.com/translate",
-    // url: "https://run.mocky.io/v3/e970aa4c-fb0c-4c6a-a8b5-d083a1925453",
-  },
-};
+const enums = require("./enums")
 
 class Pokedex {
   constructor() {
-    this.poke = poke;
-    this.habitat = {
-      CAVE: "cave",
-    };
-    this.funtranslations = funtranslations;
+    this.poke = enums.poke;
+    this.habitat = enums.habitat;
+    this.funtranslations = enums.funtranslations;
   }
 
   /**
