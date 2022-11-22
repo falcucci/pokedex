@@ -63,6 +63,18 @@ curl --location --request GET 'https://pokedex-falcucci.vercel.app/api/pokemon/t
 
 [![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/falcucci/pokedex)
 
+# Test Coverage
+
+you can check if everything is fine running the assertions
+```bash
+npm run test
+```
+generate coverage
+```bash
+npm run coverage
+```
+
+<img width="1414" alt="Screenshot 2022-11-22 at 23 00 18" src="https://user-images.githubusercontent.com/33763843/203430189-b96280f3-d8b0-4b28-baa2-cf3fd1a42a69.png">
 
 #### The Node Way&trade;
 
