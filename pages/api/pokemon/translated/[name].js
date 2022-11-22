@@ -2,7 +2,7 @@ const {
   StatusCodes,
 } = require("http-status-codes");
 
-const Pokedex = require("../../../../utils/Pokedex");
+const Pokedex = require("../../../../utils/pokedex");
 
 module.exports = async function handler(req, res) {
   const name = req.query.name;
