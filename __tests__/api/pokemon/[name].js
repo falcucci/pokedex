@@ -3,7 +3,7 @@
 const chai = require("chai");
 const expect = require("unexpected");
 const chaiHttp = require("chai-http");
-const HttpStatus = require("http-status-codes");
+const { StatusCodes } = require('http-status-codes');
 const { app } = require("../../server");
 
 const pokeInterceptor = require("../../../__interceptors__/poke-api.interceptor");
@@ -23,7 +23,7 @@ describe("route api/pokemon", () => {
       const headers = { Accept: "application/json" };
       const res = await chai.request(server).get(url).set(headers);
       const bodyAssert = mock.pokemon.get;
-      res.should.have.status(HttpStatus.OK);
+      res.should.have.status(StatusCodes.OK);
       expect(res.body, "to satisfy", bodyAssert);
     }).timeout(5000);
 
@@ -32,7 +32,7 @@ describe("route api/pokemon", () => {
       const url = "/api/pokemon/ditto";
       const headers = { Accept: "application/json" };
       const res = await chai.request(server).get(url).set(headers);
-      res.should.have.status(HttpStatus.NOT_FOUND);
+      res.should.have.status(StatusCodes.NOT_FOUND);
     }).timeout(5000);
   });
 
@@ -43,7 +43,7 @@ describe("route api/pokemon", () => {
       const headers = { Accept: "application/json" };
       const res = await chai.request(server).get(url).set(headers);
       const bodyAssert = mock.pokemon.translate.shakespeare;
-      res.should.have.status(HttpStatus.OK);
+      res.should.have.status(StatusCodes.OK);
       expect(res.body, "to satisfy", bodyAssert);
     }).timeout(5000);
 
@@ -53,7 +53,7 @@ describe("route api/pokemon", () => {
       const headers = { Accept: "application/json" };
       const res = await chai.request(server).get(url).set(headers);
       const bodyAssert = mock.pokemon.translate.yoda;
-      res.should.have.status(HttpStatus.OK);
+      res.should.have.status(StatusCodes.OK);
       expect(res.body, "to satisfy", bodyAssert);
     }).timeout(5000);
 
@@ -63,7 +63,7 @@ describe("route api/pokemon", () => {
       const headers = { Accept: "application/json" };
       const res = await chai.request(server).get(url).set(headers);
       const bodyAssert = mock.pokemon.translate.default;
-      res.should.have.status(HttpStatus.OK);
+      res.should.have.status(StatusCodes.OK);
       expect(res.body, "to satisfy", bodyAssert);
     }).timeout(5000);
 

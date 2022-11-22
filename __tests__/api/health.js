@@ -1,7 +1,7 @@
 "use strict";
 const chai = require("chai");
 const chaiHttp = require("chai-http");
-const HttpStatus = require("http-status-codes");
+const { StatusCodes } = require('http-status-codes');
 const { app } = require("../server");
 
 chai.use(chaiHttp);
@@ -15,7 +15,7 @@ describe("route api/health", () => {
       const url = "/api/health";
       const headers = { Accept: "application/json" };
       const res = await chai.request(server).get(url).set(headers);
-      res.should.have.status(HttpStatus.OK);
+      res.should.have.status(StatusCodes.OK);
     }).timeout(5000);
   });
 });
