@@ -22,12 +22,16 @@ class Pokedex {
     if (method === "POST") {
       headers["Content-Type"] = "application/json";
     }
-    const res = await fetch(url, {
-      method,
-      body,
-      headers,
-    });
-    return res.json();
+    try {
+      const res = await fetch(url, {
+        method,
+        body,
+        headers,
+      });
+      return res.json();
+    } catch (e) {
+      return
+    }
   }
 
   async search(name) {
@@ -39,6 +43,7 @@ class Pokedex {
 
   async get({ name, translate = false }) {
     const response = await this.search(name);
+    if (!response) { return };
     const pokemon = await this.values(response);
     pokemon.description = translate
       ? await this.translate(pokemon)
@@ -47,6 +52,7 @@ class Pokedex {
   }
 
   async values(response) {
+    if (!response) { return };
     const name = _.get(response, "name");
     const habitat = _.get(response, "habitat.name");
     const isLegendary = _.get(response, "is_legendary");

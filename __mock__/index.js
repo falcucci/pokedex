@@ -22,6 +22,17 @@ module.exports = {
         habitat: "rare",
         isLegendary: true,
       },
+      default: {
+        name: "mewtwo",
+        description:
+          "It was created by\n" +
+          "a scientist after\n" +
+          "years of horrific\fgene splicing and\n" +
+          "DNA engineering\n" +
+          "experiments.",
+        habitat: "rare",
+        isLegendary: true,
+      },
     },
   },
 };

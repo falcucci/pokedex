@@ -32,7 +32,7 @@ describe("route api/pokemon", () => {
       const url = "/api/pokemon/ditto";
       const headers = { Accept: "application/json" };
       const res = await chai.request(server).get(url).set(headers);
-      res.should.have.status(HttpStatus.INTERNAL_SERVER_ERROR);
+      res.should.have.status(HttpStatus.NOT_FOUND);
     }).timeout(5000);
   });
 
@@ -47,12 +47,22 @@ describe("route api/pokemon", () => {
       expect(res.body, "to satisfy", bodyAssert);
     }).timeout(5000);
 
-    it.only("should translate in yoga mode", async function () {
+    it("should translate in yoga mode", async function () {
       pokeInterceptor.M1ZXQBAKHDUO();
       const url = "/api/pokemon/translated/mewtwo";
       const headers = { Accept: "application/json" };
       const res = await chai.request(server).get(url).set(headers);
       const bodyAssert = mock.pokemon.translate.yoda;
+      res.should.have.status(HttpStatus.OK);
+      expect(res.body, "to satisfy", bodyAssert);
+    }).timeout(5000);
+
+    it("should fail to translate and return the default description", async function () {
+      pokeInterceptor.B68E2Z9KWVFU();
+      const url = "/api/pokemon/translated/mewtwo";
+      const headers = { Accept: "application/json" };
+      const res = await chai.request(server).get(url).set(headers);
+      const bodyAssert = mock.pokemon.translate.default;
       res.should.have.status(HttpStatus.OK);
       expect(res.body, "to satisfy", bodyAssert);
     }).timeout(5000);
