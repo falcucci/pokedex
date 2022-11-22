@@ -59,10 +59,6 @@ GET pokemon by name legendary translated
 curl --location --request GET 'https://pokedex-falcucci.vercel.app/api/pokemon/translated/mewtwo'
 ```
 
-## Deploy It Yourself 🎉
-
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/falcucci/pokedex)
-
 # Test Coverage
 
 you can check if everything is fine running the assertions
@@ -75,6 +71,10 @@ npm run coverage
 ```
 
 <img width="1111" alt="Screenshot 2022-11-22 at 23 09 29" src="https://user-images.githubusercontent.com/33763843/203431526-962f7edc-ced8-4a0e-8e6d-5f74f55f214d.png">
+
+## Deploy It Yourself 🎉
+
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/falcucci/pokedex)
 
 #### The Node Way&trade;
 
