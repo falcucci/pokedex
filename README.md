@@ -22,6 +22,12 @@ docker-compose up -d --build
 | `POKE_API_URL`  | poke api endpoint |
 | `FUNTRANSLATIONS_API_URL`   | fun translations endpoint |
 
+install the dependencies
+
+```bash
+npm i
+```
+
 Or, run the development server by yourself to check better logs:
 ```bash
 npm run dev
