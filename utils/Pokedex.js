@@ -2,13 +2,13 @@ const _ = require("lodash");
 
 const poke = {
   root: {
-    url: "https://pokeapi.co/api/v2",
+    url: process.env.POKE_API_URL || "https://pokeapi.co/api/v2",
   },
 };
 
 const funtranslations = {
   root: {
-    url: "https://api.funtranslations.com/translate",
+    url: process.env.FUNTRANSLATIONS_API_URL || "https://api.funtranslations.com/translate",
     // url: "https://run.mocky.io/v3/e970aa4c-fb0c-4c6a-a8b5-d083a1925453",
   },
 };
