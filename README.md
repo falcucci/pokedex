@@ -74,7 +74,7 @@ generate coverage
 npm run coverage
 ```
 
-<img width="989" alt="Screenshot 2022-11-22 at 23 03 55" src="https://user-images.githubusercontent.com/33763843/203431114-579aba74-d4aa-48e1-84cf-1e0268be8717.png">
+<img width="1111" alt="Screenshot 2022-11-22 at 23 09 29" src="https://user-images.githubusercontent.com/33763843/203431526-962f7edc-ced8-4a0e-8e6d-5f74f55f214d.png">
 
 #### The Node Way&trade;
 
