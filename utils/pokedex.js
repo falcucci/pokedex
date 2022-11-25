@@ -1,6 +1,8 @@
 const _ = require("lodash");
 const enums = require("./enums");
 
+const { StatusCodes } = require('http-status-codes');
+
 class Pokedex {
   constructor() {
     this.poke = enums.poke;
@@ -28,8 +30,9 @@ class Pokedex {
         body,
         headers,
       });
-      return res.json();
+      return await res.json();
     } catch (e) {
+      console.log('e: ', e);
       return
     }
   }
